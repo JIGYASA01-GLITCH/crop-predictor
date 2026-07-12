@@ -66,7 +66,7 @@ model   = pickle.load(open('crop_model.pkl', 'rb'))
 scaler  = pickle.load(open('scaler.pkl', 'rb'))
 le      = pickle.load(open('label_encoder.pkl', 'rb'))
 
-FEATURE_NAMES = ['N', 'P', 'K', 'temperature', 'humidity', 'ph', 'rainfall']
+FEATURE_NAMES = ['temperature', 'humidity', 'rainfall']
 
 # ─────────────────────────────────────────────
 # Crop one-line descriptions (29 crops)
@@ -114,14 +114,10 @@ def predict():
 
     # N, P, K — farmer nahi jaanta, dataset average use karo
     features = np.array([[
-        data.get('N', 52),           # default: dataset average
-        data.get('P', 53),           # default: dataset average
-        data.get('K', 48),           # default: dataset average
-        data['temperature'],
-        data['humidity'],
-        data['ph'],
-        data['rainfall']
-    ]])
+    data['temperature'],
+    data['humidity'],
+    data['rainfall']
+]])
 
     scaled    = scaler.transform(features)
     pred      = model.predict(scaled)
