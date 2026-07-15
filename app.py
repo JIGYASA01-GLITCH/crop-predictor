@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 import pickle
 import numpy as np
 import os
@@ -135,6 +135,8 @@ def predict():
     pred      = model.predict(scaled)
     prob      = model.predict_proba(scaled)
     crop_name = le.inverse_transform(pred)[0]
+    # Image URL
+    image_url = request.host_url + "static/images/" + crop_name.lower() + ".png"
     confidence = round(prob.max() * 100, 2)
 
     # Top 3 crops
@@ -156,13 +158,14 @@ def predict():
         warning = "Low confidence prediction — please verify your input values or consult an agronomist."
 
     return jsonify({
-        'recommended_crop': crop_name,
-        'confidence':       confidence,
-        'description':      CROP_INFO.get(crop_name, 'No description available.'),
-        'key_factor':       top_feature,
-        'top3':             top3,
-        'warning':          warning
-    })
+    'recommended_crop': crop_name,
+    'image_url': image_url,
+    'confidence': confidence,
+    'description': CROP_INFO.get(crop_name, 'No description available.'),
+    'key_factor': top_feature,
+    'top3': top3,
+    'warning': warning
+})
 
 
 # ─────────────────────────────────────────────
