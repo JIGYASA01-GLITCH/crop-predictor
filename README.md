@@ -58,25 +58,25 @@ An AI-powered crop recommendation application developed using **Machine Learning
 
 ## Farmer Registration
 
-![Farmer Registration](Screenshots/FarmerRegistration.png)
+![Farmer Registration](FarmerRegistration.png)
 
 ---
 
 ## Weather Dashboard
 
-![Weather Dashboard](Screenshots/WeatherDashboard.png)
+![Weather Dashboard](WeatherDashboard.png)
 
 ---
 
 ## Crop Recommendation
 
-![Crop Recommendation](Screenshots/CropRecommendation.png)
+![Crop Recommendation](CropRecommendation.png)
 
 ---
 
 ## Fertilizer Recommendation
 
-![Fertilizer Recommendation](Screenshots/FertilizerRecommendation.png)
+![Fertilizer Recommendation](FertilizerRecommendation.png)
 
 ---
 
