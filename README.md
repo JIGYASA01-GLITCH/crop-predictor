@@ -98,12 +98,11 @@ AI-Crop-Recommendation-System/
 ├── OutSystems/
 │   └── CropRecommendationApp.oml
 │
-├── Screenshots/
-│   ├── FarmerRegistration.png
-│   ├── WeatherDashboard.png
-│   ├── CropRecommendation.png
-│   ├── FertilizerRecommendation.png
-│   └── Architecture.png
+│── FarmerRegistration.png
+│── WeatherDashboard.png
+│── CropRecommendation.png
+│── FertilizerRecommendation.png
+│   
 │
 └── README.md
 ```
